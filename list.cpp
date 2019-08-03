@@ -1,5 +1,3 @@
-// Clase para lista en C++
-
 #include<iostream>
 #include<stdlib.h>
 using namespace std;
@@ -11,7 +9,7 @@ class List{
     class Node{
 
         /* Aquí utilizamos apuntadores (*something) porque la clase nodo no puede saber
-        cuando tamaño de memoria le va a asignar a sus atributos (previous y next), lo
+        que tamaño de memoria le va a asignar a sus atributos (previous y next), lo
         cual se soluciona con aputadores.
 
         Atributos de la clase nodo.
@@ -39,7 +37,7 @@ class List{
       this->element = elem;
     }
 
-  // Método que nos regresa la longitud de  la lista.  
+  // Método que nos regresa la longitud de  la lista.
   int List::getLength(){
     return length;
   }
