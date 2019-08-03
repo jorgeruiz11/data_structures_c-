@@ -13,25 +13,28 @@ class List{
         cual se soluciona con aputadores.
 
         Atributos de la clase nodo.
+        Tuve que hacer los atributos publicos.
         */
-        private:
+
+        // Métodos/funciones de la clase nodo.
+        public:
           string element;
           Node *previous;
           Node *next;
-        // Métodos/funciones de la clase nodo.
-        public:
           Node(string);
     };
 
     // Atributos de la clase lista.
     private:
-      Node head;
-      Node tail;
+      Node *head;
+      Node *tail;
       int length;
     // Métodos/funciones de la clase lista.
     public:
       int getLength();
+      void addEnd(string);
 };
+
     // Constructor de la clase nodo.
     List::Node::Node(string elem){
       this->element = elem;
@@ -40,6 +43,22 @@ class List{
   // Método que nos regresa la longitud de  la lista.
   int List::getLength(){
     return length;
+  }
+
+  // Método que agrega al final de la lista el elemento dado.
+  void List::addEnd(string element){
+    Node *newNode = new Node(element);
+
+    if(this->length == 0){
+      this->head = this->tail = newNode;
+      this->head->previous = NULL;
+      this->tail->next = NULL;
+    }else{
+      this->tail->next = newNode;
+      newNode->previous = tail;
+      this->tail = newNode;
+    }
+    length++;
   }
 
 
